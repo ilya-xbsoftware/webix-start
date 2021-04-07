@@ -1,6 +1,7 @@
 import { SIDE_MENU } from '@js/constants/sideMenu';
 
 const sideBar = {
+  css: 'sideBarColor',
   rows: [
     {
       view: 'list',
@@ -9,7 +10,6 @@ const sideBar = {
       autoheight: true,
       scroll: false,
       data: SIDE_MENU,
-      css: 'webix_dark',
     },
     {},
     {

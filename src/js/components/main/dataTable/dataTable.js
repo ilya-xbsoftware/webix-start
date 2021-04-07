@@ -4,6 +4,8 @@ const dataTable = {
   view: 'datatable',
   autoConfig: true,
   data: SMALL_FILM_SET,
+  css: 'dataTable',
+  scrollX: false,
 };
 
 export { dataTable };

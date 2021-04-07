@@ -14,7 +14,6 @@ const main = {
     dataTable,
     form,
   ],
-
 };
 
 export { main };
