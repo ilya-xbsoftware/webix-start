@@ -15,17 +15,18 @@
     "url": "git+https://github.com/roadToTheFuture/Test-task-WA-2021"
   },
   "keywords": [
-    "test",
+    "WA",
     "task",
-    "2021"
+    "2021",
+    "start"
   ],
-  "author": "Ilya Safyan <justnoadvertising@gmail.com>",
+  "author": "Ilya Safyan <isafyan@xbsoftware.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/roadToTheFuture/Test-task-WA-2021/issues"
+    "url": "https://github.com/ilya-xbsoftware/sissues"
   },
   "browserslist": "> 0.25%, not dead",
-  "homepage": "https://github.com/roadToTheFuture/Test-task-WA-2021#readme",
+  "homepage": "https://github.com/ilya-xbsoftware/#readme",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
