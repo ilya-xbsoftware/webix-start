@@ -5,21 +5,19 @@ const sideBar = {
   rows: [
     {
       view: 'list',
+      type: 'clear',
       id: 'mylist',
       width: 200,
       autoheight: true,
-      scroll: false,
       data: SIDE_MENU,
+      css: 'list',
     },
     {},
     {
-      view: 'button',
-      label: 'Connected',
-      type: 'icon',
-      icon: 'wxi-check',
-      css: ' webix_transparent greenbutton',
-      autowidth: true,
-      align: 'center',
+      template: '<span class="webix_icon wxi-check">Connected</span>',
+      autoheight: true,
+      id: 'connect',
+      css: 'greenbutton',
     },
   ],
 };

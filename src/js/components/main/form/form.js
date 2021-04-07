@@ -1,19 +1,17 @@
 const form = {
   view: 'form',
-  scroll: false,
-  width: 250,
-  autoHeight: true,
+  width: 300,
   elements: [
     { template: 'EDIT FILMS', type: 'section' },
     { view: 'text', name: 'title', label: 'Title' },
-    { view: 'text', name: 'year', label: 'Year' },
-    { view: 'text', name: 'rating', label: 'Date' },
-    { view: 'text', name: 'rating', label: 'Votes' },
-    {
+    { view: 'text', name: 'year', label: 'Year', type:'number' },
+    { view: 'text', name: 'rating', label: 'Date', type:'date' },
+    { view: 'text', name: 'rating', label: 'Votes', type:'number' },
+    { margin: 10,
       cols: [
-        { view: 'button', value: 'Add new', inputWidth: 100 },
+        { view: 'button', value: 'Add new', css: 'webix_primary' },
         {
-          view: 'button', value: 'Clear', inputWidth: 100, align: 'right',
+          view: 'button', value: 'Clear',
         },
       ],
     },

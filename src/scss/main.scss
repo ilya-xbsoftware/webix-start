@@ -2,10 +2,20 @@
 @import './utils/vars';
 @import 'webix/webix.min.css';
 
+.webix_list {
+  background-color: rgba(255, 255, 0, 0);
+  border: none;
+  &_item {
+    border: none;
+  }
+}
+
 .greenbutton {
   color: green;
+  background: none;
+  border: none;
 }
 
 .sideBarColor {
-  background-color: rgba(105, 96, 96, 0.452);
+  background-color: rgba(150, 160, 179, 0.452);
 }
