@@ -1,4 +1,5 @@
-import { validate } from "@babel/types";
+import { CONFIRM_TEXT } from '@js/constants/webixConfirm';
+
 const webix = require('webix/webix.js');
 
 const form = {
@@ -21,14 +22,23 @@ const form = {
   ],
   rules:{
     title: webix.rules.isNotEmpty,
-    year: function(value){return value > 1970},
-    votes: function(value){return value < 100000},
-    rating: function(value){return value != 0}
+    year: (value) => value > 1970,
+    votes: (value) => value < 100000,
+    rating: (value) => value != 0,
   }
 };
 
 function clearForm(){
-  $$("editFilmsForm").clear();
+  const form = $$("editFilmsForm");
+  webix.confirm({
+    text: CONFIRM_TEXT,
+  }).then(
+    function (){
+      form.clear();
+      form.clearValidation();
+    }
+  )
+  
 }
 
 function addNewFilm() {
@@ -38,8 +48,6 @@ function addNewFilm() {
  
   if ( validateForm(form) ){
     table.add(newFilmsInfo);
-  }else{
-    console.log('false');
   }
 }
 
@@ -52,7 +60,6 @@ function validateForm(form) {
     return false;
   }
 }
-
 
 export { form };
 
