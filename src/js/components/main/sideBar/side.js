@@ -14,10 +14,14 @@ const sideBar = {
     },
     {},
     {
-      template: '<span class="webix_icon wxi-check">Connected</span>',
+      view: 'button',
+      label: 'Connected',
+      type: 'icon',
+      icon: 'wxi-check',
+      align: 'center',
       autoheight: true,
       id: 'connect',
-      css: 'greenbutton',
+      css: 'greenbutton webix_transparent',
     },
   ],
 };

@@ -11,11 +11,15 @@
 }
 
 .greenbutton {
-  color: green;
-  background: none;
-  border: none;
+  .webix_button.webix_img_btn {
+    color: green;
+  }
+
+  .wxi-check:before {
+    color: green;
+  }
 }
 
 .sideBarColor {
-  background-color: rgba(150, 160, 179, 0.452);
+  background-color: rgba(160, 172, 194, 0.452);
 }
