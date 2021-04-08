@@ -33,9 +33,11 @@ function clearForm(){
 
 function addNewFilm() {
   const form = $$("editFilmsForm");
-
+  const table = $$('filmsTable');
+  const newFilmsInfo = form.getValues();
+ 
   if ( validateForm(form) ){
-    console.log('true');
+    table.add(newFilmsInfo);
   }else{
     console.log('false');
   }
@@ -43,7 +45,7 @@ function addNewFilm() {
 
 function validateForm(form) {
   if (form.validate()){
-    webix.message("All is correct");
+    webix.message({text:"Film added", css:'validTrueText'});
     return true;
   } else{
     webix.message({ type:"error", text:"Form data are invalid" });
