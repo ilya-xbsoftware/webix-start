@@ -13,4 +13,4 @@ const popup = webix.ui({
   }
 }).hide();
 
-export { popup }
+export { popup };
