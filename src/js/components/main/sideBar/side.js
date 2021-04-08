@@ -5,8 +5,6 @@ const sideBar = {
   rows: [
     {
       view: 'list',
-      type: 'clear',
-      id: 'mylist',
       width: 200,
       autoheight: true,
       data: SIDE_MENU,
@@ -14,14 +12,11 @@ const sideBar = {
     },
     {},
     {
-      view: 'button',
-      label: 'Connected',
-      type: 'icon',
+      view: 'label',
+      label: '<span class="webix_icon wxi-check"></span> Connected',
       icon: 'wxi-check',
       align: 'center',
-      autoheight: true,
-      id: 'connect',
-      css: 'greenbutton webix_transparent',
+      css: 'greenbutton',
     },
   ],
 };

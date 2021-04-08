@@ -1,6 +1,5 @@
 const header = {
   view: 'toolbar',
-  id: 'header',
   css: 'webix_dark',
   elements: [
     { view: 'label', label: 'My App' },

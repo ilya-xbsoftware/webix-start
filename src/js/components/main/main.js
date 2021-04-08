@@ -4,7 +4,6 @@ import { form } from './form/form';
 
 const resizer = {
   view: 'resizer',
-  id: 'resizer',
 };
 
 const main = {
