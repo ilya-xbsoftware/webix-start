@@ -47,20 +47,21 @@ function addNewFilm() {
   const form = $$("editFilmsForm");
   const table = $$("filmsTable");
   const newFilmsInfo = form.getValues();
- 
-  if ( validateForm(form) ){
-    table.add(newFilmsInfo);
-  }
+  const validationFlag = validateForm(form);
+  
+  if (validationFlag) table.add(newFilmsInfo);
 }
 
 function validateForm(form) {
-  if (form.validate()){
+  const validationFlag = form.validate();
+  
+  if (validationFlag){
     webix.message({text:"Film added", css:"validTrueText"});
-    return true;
   } else{
-    webix.message({ type:"error", text:"Form data are invalid" });
-    return false;
+    webix.message({ type:"error", text:"Form data are invalid"});
   }
+
+  return validationFlag
 }
 
 export { form };
