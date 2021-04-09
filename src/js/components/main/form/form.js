@@ -1,4 +1,5 @@
 import { CONFIRM_TEXT } from "@js/constants/webixConfirm";
+import { VALID_RULES } from "@js/constants/validRules";
 
 const webix = require("webix/webix.js");
 
@@ -8,10 +9,10 @@ const form = {
   id: "editFilmsForm",
   elements: [
     { template: "edit films", type: "section" },
-    { view: "text", label: "Title", name: "title" },
-    { view: "text", label: "Year", type:"number", name: "year" },
-    { view: "text", label: "Votes", type:"number", name: "votes" },
-    { view: "text", label: "Rating", type:"number", name: "rating" },
+    { view: "text", label: "Title", name: "title", invalidMessage: VALID_RULES.title},
+    { view: "text", label: "Year", type:"number", name: "year", invalidMessage: VALID_RULES.year},
+    { view: "text", label: "Votes", type:"number", name: "votes", invalidMessage: VALID_RULES.votes},
+    { view: "text", label: "Rating", type:"number", name: "rating", invalidMessage: VALID_RULES.rating},
     { margin: 10,
       cols: [
         { view: "button", value: "Add new", css: "webix_primary",  click: addNewFilm},
@@ -25,6 +26,9 @@ const form = {
     year: (value) => value > 1970,
     votes: (value) => value < 100000,
     rating: (value) => value != 0,
+  },
+  elementsConfig:{
+    bottomPadding:15
   }
 };
 

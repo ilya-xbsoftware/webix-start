@@ -11,6 +11,6 @@ const popup = webix.ui({
       autoheight:true,
       select:true, 	
   }
-}).hide();
+});
 
 export { popup };
