@@ -56,7 +56,7 @@ function validateForm(form) {
   const validationFlag = form.validate();
   
   if (validationFlag){
-    webix.message({text:"Film added", css:"validTrueText"});
+    webix.message({ type:"success", text:"Film added"});
   } else{
     webix.message({ type:"error", text:"Form data are invalid"});
   }
