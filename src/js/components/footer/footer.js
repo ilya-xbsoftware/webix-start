@@ -1,9 +1,9 @@
-import { FOOTER_DESCRIPTION } from '@js/constants/footer';
+import { FOOTER_DESCRIPTION } from "@js/constants/footer";
 
 const footer = {
-  view: 'label',
+  view: "label",
   label: FOOTER_DESCRIPTION,
-  align: 'center',
+  align: "center",
 };
 
 export { footer };

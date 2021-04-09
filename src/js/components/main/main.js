@@ -1,9 +1,9 @@
-import { sideBar } from './sideBar/side';
-import { dataTable } from './dataTable/dataTable';
-import { form } from './form/form';
+import { sideBar } from "./sideBar/side";
+import { dataTable } from "./dataTable/dataTable";
+import { form } from "./form/form";
 
 const resizer = {
-  view: 'resizer',
+  view: "resizer",
 };
 
 const main = {

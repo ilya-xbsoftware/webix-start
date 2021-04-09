@@ -25,6 +25,8 @@
       }
     ],
     "no-use-before-define": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "avoidEscape": true,
+    "allowTemplateLiterals": true,
   }
 }
