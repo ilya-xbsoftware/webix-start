@@ -1,6 +1,6 @@
-import  { POPUP_DATA } from '@js/constants/popupData';
+import  { POPUP_DATA } from "@js/constants/popupData";
 
-const webix = require('webix/webix.js');
+const webix = require("webix/webix.js");
 
 const popup = webix.ui({
   view:"popup",

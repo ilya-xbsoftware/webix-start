@@ -1,21 +1,21 @@
-import { CONFIRM_TEXT } from '@js/constants/webixConfirm';
+import { CONFIRM_TEXT } from "@js/constants/webixConfirm";
 
-const webix = require('webix/webix.js');
+const webix = require("webix/webix.js");
 
 const form = {
-  view: 'form',
+  view: "form",
   width: 300,
   id: "editFilmsForm",
   elements: [
-    { template: 'edit films', type: 'section' },
-    { view: 'text', label: 'Title', name: "title" },
-    { view: 'text', label: 'Year', type:'number', name: "year" },
-    { view: 'text', label: 'Votes', type:'number', name: "votes" },
-    { view: 'text', label: 'Rating', type:'number', name: "rating" },
+    { template: "edit films", type: "section" },
+    { view: "text", label: "Title", name: "title" },
+    { view: "text", label: "Year", type:"number", name: "year" },
+    { view: "text", label: "Votes", type:"number", name: "votes" },
+    { view: "text", label: "Rating", type:"number", name: "rating" },
     { margin: 10,
       cols: [
-        { view: 'button', value: 'Add new', css: 'webix_primary',  click: addNewFilm},
-        { view: 'button', value: 'Clear', click: clearForm}
+        { view: "button", value: "Add new", css: "webix_primary",  click: addNewFilm},
+        { view: "button", value: "Clear", click: clearForm}
       ],
     },
     {},
@@ -43,7 +43,7 @@ function clearForm(){
 
 function addNewFilm() {
   const form = $$("editFilmsForm");
-  const table = $$('filmsTable');
+  const table = $$("filmsTable");
   const newFilmsInfo = form.getValues();
  
   if ( validateForm(form) ){
@@ -53,7 +53,7 @@ function addNewFilm() {
 
 function validateForm(form) {
   if (form.validate()){
-    webix.message({text:"Film added", css:'validTrueText'});
+    webix.message({text:"Film added", css:"validTrueText"});
     return true;
   } else{
     webix.message({ type:"error", text:"Form data are invalid" });

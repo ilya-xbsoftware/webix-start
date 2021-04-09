@@ -1,22 +1,22 @@
-import { SIDE_MENU } from '@js/constants/sideMenu';
+import { SIDE_MENU } from "@js/constants/sideMenu";
 
 const sideBar = {
-  css: 'sideBarColor',
+  css: "sideBarColor",
   rows: [
     {
-      view: 'list',
+      view: "list",
       width: 200,
       autoheight: true,
       data: SIDE_MENU,
-      css: 'list',
+      css: "list",
     },
     {},
     {
-      view: 'label',
-      label: '<span class="webix_icon wxi-check"></span> Connected',
-      icon: 'wxi-check',
-      align: 'center',
-      css: 'greenbutton',
+      view: "label",
+      label: "<span class='webix_icon wxi-check'></span> Connected",
+      icon: "wxi-check",
+      align: "center",
+      css: "greenbutton",
     },
   ],
 };
