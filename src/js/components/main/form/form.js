@@ -24,7 +24,7 @@ const form = {
   rules:{
     title: webix.rules.isNotEmpty,
     year: (value) => value > 1970,
-    votes: (value) => value < 100000,
+    votes: (value) => value < 100000 && value > 0,
     rating: (value) => value != 0,
   },
   elementsConfig:{
@@ -36,13 +36,11 @@ function clearForm(){
   const form = $$("editFilmsForm");
   webix.confirm({
     text: CONFIRM_TEXT,
-  }).then(
-    function (){
+  }).then(() => {
       form.clear();
       form.clearValidation();
     }
   )
-  
 }
 
 function addNewFilm() {
