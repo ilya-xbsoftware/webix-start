@@ -1,6 +1,6 @@
 import { $$ } from "webix/webix";
-import { dataTable } from "./dataTable/dataTable";
-import { form } from "./form/form";
+import { dataTable } from "./dashboard/dataTable/dataTable";
+import { form } from "./dashboard/form/form";
 
 const dashboard = {
   id: "Dashboard",

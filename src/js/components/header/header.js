@@ -1,4 +1,4 @@
-import popup from "../main/popup/popup";
+import popup from "./popup/popup";
 
 const header = {
   view: "toolbar",
