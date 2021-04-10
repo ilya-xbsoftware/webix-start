@@ -5,10 +5,18 @@ const sideBar = {
   rows: [
     {
       view: "list",
+      id: "listMenu",
       width: 200,
       autoheight: true,
       data: SIDE_MENU,
       css: "list",
+      select:true,
+      on:{
+        onAfterLoad: function() {
+          this.select("Dashboard");
+          this.attachEvent("onAfterSelect", (id) => $$(id).show());
+         },
+      }
     },
     {},
     {
@@ -20,5 +28,6 @@ const sideBar = {
     },
   ],
 };
+
 
 export { sideBar };

@@ -4,7 +4,7 @@ const dataTable = {
   view: "datatable",
   id: "filmsTable",
   autoConfig: true,
-  data: SMALL_FILM_SET,
+  url:"../../../constants/data/data.json",
   scrollX: false,
 };
 
