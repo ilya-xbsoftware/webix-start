@@ -9,7 +9,7 @@ const sideBar = {
       width: 200,
       autoheight: true,
       data: SIDE_MENU,
-      css: "list",
+      css: "sideBar",
       select:true,
       on:{
         onAfterLoad: function() {

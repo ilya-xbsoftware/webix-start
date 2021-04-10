@@ -1,8 +1,10 @@
 import { $$ } from "webix/webix";
 import { dataTable } from "./dashboard/dataTable/dataTable";
 import { form } from "./dashboard/form/form";
+import { users } from "./users/users";
+import { products } from "./products/products";
 
-const dashboard = {
+const dashboardSection = {
   id: "Dashboard",
   cols: [
     dataTable,
@@ -10,27 +12,33 @@ const dashboard = {
   ],
 }
 
-const users  = {
+const usersSection  = {
   id: "Users",
-  template: "Users",
+  rows:[
+    users,
+    {},
+  ]
 }
 
-const products   = {
+const productsSection   = {
   id: "Products",
-  template: "Products",
+  rows:[
+    products,
+    {},
+  ]
 }
 
-const admin   = {
+const adminSection   = {
   id: "Admin",
   template: "Admin",
 }
 
 const main = {
   cells:[
-    dashboard,
-    users,
-    products,
-    admin,
+    dashboardSection,
+    usersSection,
+    productsSection,
+    adminSection,
   ]
 };
 

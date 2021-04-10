@@ -18,8 +18,8 @@ const dataTable = {
   on:{
     onAfterLoad: function () {
       const table = this; 
-  
-      table.on_click.delBtn = (e, id) => {
+
+      this.on_click.delBtn = (e, id) => {
         this.remove(id);
       }
     }

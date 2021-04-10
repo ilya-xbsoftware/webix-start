@@ -2,7 +2,7 @@
 @import './utils/vars';
 @import 'webix/webix.min.css';
 
-.webix_list {
+.sideBar {
   background-color: rgba(255, 255, 0, 0);
   border: none;
   &_item {
@@ -30,4 +30,32 @@
 
 .deleteBtn {
   cursor: pointer;
+}
+
+.upperList {
+  .webix_scroll_cont > div {
+    &:nth-child(1) {
+      background: rgb(146, 246, 199);
+    }
+
+    &:nth-child(2) {
+      background: rgb(146, 246, 238);
+    }
+
+    &:nth-child(3) {
+      background: rgb(146, 201, 246);
+    }
+
+    &:nth-child(4) {
+      background: rgb(146, 153, 246);
+    }
+
+    &:nth-child(5) {
+      background: rgb(194, 246, 146);
+    }
+  }
+
+  .upperListBtn {
+    float: right;
+  }
 }
