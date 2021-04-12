@@ -12,15 +12,15 @@ const sideBar = {
       css: "sideBar",
       select:true,
       on:{
-        onAfterLoad: function() {
-          this.select("Dashboard");
-        },
         onAfterSelect: function (id) {
            if($$(id)) {
              $$(id).show();
            }
         },
-      }
+      },
+      ready: function() {
+        this.select("Dashboard");
+      },
     },
     {},
     {
