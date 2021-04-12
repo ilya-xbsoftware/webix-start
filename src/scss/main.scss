@@ -34,24 +34,8 @@
 
 .upperList {
   .webix_scroll_cont > div {
-    &:nth-child(1) {
-      background: rgb(146, 246, 199);
-    }
-
-    &:nth-child(2) {
-      background: rgb(146, 246, 238);
-    }
-
-    &:nth-child(3) {
-      background: rgb(146, 201, 246);
-    }
-
-    &:nth-child(4) {
-      background: rgb(146, 153, 246);
-    }
-
-    &:nth-child(5) {
-      background: rgb(194, 246, 146);
+    &:nth-child(-n + 5) {
+      background: rgba(146, 153, 246, 0.561);
     }
   }
 

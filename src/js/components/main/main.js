@@ -15,7 +15,6 @@ const usersSection  = {
   id: "Users",
   rows:[
     users,
-    {},
   ]
 }
 
@@ -23,7 +22,6 @@ const productsSection   = {
   id: "Products",
   rows:[
     products,
-    {},
   ]
 }
 

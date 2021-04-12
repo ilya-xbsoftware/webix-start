@@ -5,7 +5,7 @@ const webix = require("webix/webix.js");
 
 const form = {
   view: "form",
-  width: 300,
+  width: 400,
   id: "editFilmsForm",
   elements: [
     { template: "edit films", type: "section" },
@@ -16,7 +16,9 @@ const form = {
     { margin: 10,
       cols: [
         { view: "button", value: "Add new", css: "webix_primary",  click: addNewFilm},
-        { view: "button", value: "Clear", click: clearForm}
+        { view: "button", value: "Clear", click: clearForm},
+        { view: "button", value: "Save", click: saveItem},
+        { view: "button", value: "Delete", click: deleteItem}
       ],
     },
     {},
@@ -29,6 +31,27 @@ const form = {
   },
   elementsConfig:{
     bottomPadding:15
+  }
+};
+
+function saveItem(){
+  const form = $$("editFilmsForm");
+  const table = $$("filmsTable");
+  const itemData = form.getValues();
+  if (itemData.id){
+    table.updateItem(itemData.id, itemData);
+  } else {
+    table.add(itemData);
+  }
+};
+
+function deleteItem(){
+  const table = $$("filmsTable");
+  const tableId = table.getSelectedId();
+  if (tableId){
+    webix.confirm("Delete selected row?", "confirm-warning").then(function(){
+      table.remove(tableId);
+    });
   }
 };
 

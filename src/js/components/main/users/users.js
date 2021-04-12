@@ -4,15 +4,15 @@ const sortControler = {
   view:"form",
   cols:[
     { view:"text", on:{ onTimedKeyPress:filterList }},
-    { view: "button",  value:"Sort asc", name:"asc", css: "webix_primary", autowidth:true, click:sortList},
-    { view: "button",  value:"Sort desc", name:"desc", css: "webix_primary", autowidth:true, click:sortList},
+    { view: "button",  value:"Sort asc", name:"asc", css: "webix_primary", autowidth:true, click:() => sortList("asc")},
+    { view: "button",  value:"Sort desc", name:"desc", css: "webix_primary", autowidth:true, click:() => sortList("desc")},
   ]
 }
 
 const list = {
   view:"list",
   id:"userList", 
-  autoheight:true,
+  minHeight: 280,
   css:"upperList",
   template:"#name# <span class='webix_icon wxi-close closeBtn upperListBtn'></span>",
   select:"multiselect",
@@ -30,7 +30,8 @@ const chart = {
   minHeight:300,
   value:"#age#",
   xAxis:{
-    template:"#age#"
+    template:"#age#",
+    title:"Age",
   },
   data:DATA_USERS,
 }
@@ -43,12 +44,10 @@ const users = {
   ],
 };
 
-function sortList() {
-  const btn = this;
-  const sortingDirection = btn.config.name;
+function sortList(type) {
   const list = $$("userList");
 
-  list.sort("name", sortingDirection);
+  list.sort("name", type);
 }
 
 function filterList() {
