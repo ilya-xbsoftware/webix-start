@@ -1,4 +1,5 @@
 import { DATA_USERS } from "@js/constants/data/users";
+const webix = require("webix/webix.js");
 
 const sortControler = {
   view:"form",
@@ -18,7 +19,11 @@ const list = {
   select:"multiselect",
   onClick:{
     "closeBtn": function (e, id) {
-      this.remove(id);
+      const item = this;
+      webix.confirm("Delete selected row?", "confirm-warning").then(function(){
+        item.remove(id);
+      });
+      return false;
     }
   },
   data:DATA_USERS,

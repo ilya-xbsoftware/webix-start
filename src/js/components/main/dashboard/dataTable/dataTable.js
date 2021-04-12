@@ -2,6 +2,8 @@ import { DATA_DASHBOARD } from "@js/constants/data/dataPath";
 import addingZeros from "@js/utils/addingZeros";
 import { $$ } from "webix/webix";
 
+const webix = require("webix/webix.js");
+
 const dataTable = {
   view: "datatable",
   id: "filmsTable",
@@ -19,7 +21,11 @@ const dataTable = {
   hover:"tableHover",
   onClick:{
     "deleteBtn": function (e, id) {
-      this.remove(id);
+     const item = this;
+      webix.confirm("Delete selected row?", "confirm-warning").then(function(){
+        item.remove(id);
+      });
+      return false;
     }
   },
   on: {
