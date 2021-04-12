@@ -23,7 +23,7 @@ const form = {
   ],
   rules:{
     title: webix.rules.isNotEmpty,
-    year: (value) => value > 1970,
+    year: (value) => value > 1900,
     votes: (value) => value < 100000 && value > 0,
     rating: (value) => value != 0,
   },
