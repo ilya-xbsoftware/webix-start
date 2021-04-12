@@ -37,13 +37,12 @@ function saveItem(){
   const table = $$("filmsTable");
   const itemData = form.getValues();
   const validateFlag = validateForm(form);
-  
-  if (itemData.id && validateFlag){
-    table.updateItem(itemData.id, itemData);
-  } else {
-    if(validateFlag){
-      table.add(itemData);
-    } 
+  if(validateFlag){
+    if (itemData.id){
+      table.updateItem(itemData.id, itemData);
+    } else {
+        table.add(itemData);
+    }
   }
 };
 
