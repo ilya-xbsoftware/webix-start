@@ -36,11 +36,12 @@ function saveItem(){
   const form = $$("editFilmsForm");
   const table = $$("filmsTable");
   const itemData = form.getValues();
+  const validateFlag = validateForm(form);
   
-  if (itemData.id){
+  if (itemData.id && validateFlag){
     table.updateItem(itemData.id, itemData);
   } else {
-    if(validateForm(form)){
+    if(validateFlag){
       table.add(itemData);
     } 
   }
@@ -65,8 +66,6 @@ function validateForm(form) {
   } else{
     webix.message({ type:"error", text:"Form data are invalid"});
   }
-
-  return validationFlag
 }
 
 export { form };
