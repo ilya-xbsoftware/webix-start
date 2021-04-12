@@ -15,10 +15,8 @@ const form = {
     { view: "text", label: "Rating", name: "rating", invalidMessage: VALID_RULES.rating},
     { margin: 10,
       cols: [
-        { view: "button", value: "Add new", css: "webix_primary",  click: addNewFilm},
-        { view: "button", value: "Clear", click: clearForm},
         { view: "button", value: "Save", click: saveItem},
-        { view: "button", value: "Delete", click: deleteItem}
+        { view: "button", value: "Clear", click: clearForm}
       ],
     },
     {},
@@ -38,20 +36,13 @@ function saveItem(){
   const form = $$("editFilmsForm");
   const table = $$("filmsTable");
   const itemData = form.getValues();
+  
   if (itemData.id){
     table.updateItem(itemData.id, itemData);
   } else {
-    table.add(itemData);
-  }
-};
-
-function deleteItem(){
-  const table = $$("filmsTable");
-  const tableId = table.getSelectedId();
-  if (tableId){
-    webix.confirm("Delete selected row?", "confirm-warning").then(function(){
-      table.remove(tableId);
-    });
+    if(validateForm(form)){
+      table.add(itemData);
+    } 
   }
 };
 
@@ -64,15 +55,6 @@ function clearForm(){
       form.clearValidation();
     }
   )
-}
-
-function addNewFilm() {
-  const form = $$("editFilmsForm");
-  const table = $$("filmsTable");
-  const newFilmsInfo = form.getValues();
-  const validationFlag = validateForm(form);
-  
-  if (validationFlag) table.add(newFilmsInfo);
 }
 
 function validateForm(form) {
