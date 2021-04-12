@@ -21,10 +21,9 @@ const dataTable = {
   hover:"tableHover",
   onClick:{
     "deleteBtn": function (e, id) {
-     const item = this;
-      webix.confirm("Delete selected row?", "confirm-warning").then(function(){
-        item.remove(id);
-      });
+      webix.confirm("Delete selected row?", "confirm-warning")
+      .then(() => {this.remove(id)});
+
       return false;
     }
   },
