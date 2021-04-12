@@ -1,5 +1,3 @@
-import popup from "../main/popup/popup";
-
 const header = {
   view: "toolbar",
   css: "webix_dark",

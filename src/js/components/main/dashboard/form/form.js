@@ -5,17 +5,17 @@ const webix = require("webix/webix.js");
 
 const form = {
   view: "form",
-  width: 300,
+  width: 400,
   id: "editFilmsForm",
   elements: [
     { template: "edit films", type: "section" },
     { view: "text", label: "Title", name: "title", invalidMessage: VALID_RULES.title},
-    { view: "text", label: "Year", type:"number", name: "year", invalidMessage: VALID_RULES.year},
-    { view: "text", label: "Votes", type:"number", name: "votes", invalidMessage: VALID_RULES.votes},
-    { view: "text", label: "Rating", type:"number", name: "rating", invalidMessage: VALID_RULES.rating},
+    { view: "text", label: "Year", name: "year", invalidMessage: VALID_RULES.year},
+    { view: "text", label: "Votes", name: "votes", invalidMessage: VALID_RULES.votes},
+    { view: "text", label: "Rating", name: "rating", invalidMessage: VALID_RULES.rating},
     { margin: 10,
       cols: [
-        { view: "button", value: "Add new", css: "webix_primary",  click: addNewFilm},
+        { view: "button", value: "Save", click: saveItem},
         { view: "button", value: "Clear", click: clearForm}
       ],
     },
@@ -23,12 +23,26 @@ const form = {
   ],
   rules:{
     title: webix.rules.isNotEmpty,
-    year: (value) => value > 1970,
+    year: (value) => value > 1900,
     votes: (value) => value < 100000 && value > 0,
     rating: (value) => value != 0,
   },
   elementsConfig:{
     bottomPadding:15
+  }
+};
+
+function saveItem(){
+  const form = $$("editFilmsForm");
+  const table = $$("filmsTable");
+  const itemData = form.getValues();
+  const validateFlag = validateForm(form);
+  if(validateFlag){
+    if (itemData.id){
+      table.updateItem(itemData.id, itemData);
+    } else {
+        table.add(itemData);
+    }
   }
 };
 
@@ -43,15 +57,6 @@ function clearForm(){
   )
 }
 
-function addNewFilm() {
-  const form = $$("editFilmsForm");
-  const table = $$("filmsTable");
-  const newFilmsInfo = form.getValues();
-  const validationFlag = validateForm(form);
-  
-  if (validationFlag) table.add(newFilmsInfo);
-}
-
 function validateForm(form) {
   const validationFlag = form.validate();
   
@@ -60,8 +65,6 @@ function validateForm(form) {
   } else{
     webix.message({ type:"error", text:"Form data are invalid"});
   }
-
-  return validationFlag
 }
 
 export { form };
