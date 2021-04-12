@@ -10,20 +10,16 @@ const dataTable = {
     { id:"year", header:["Released", {content: "selectFilter"}] , fillspace:1, sort:"int"},
     { id:"votes", header:["Votes", {content: "numberFilter"}], fillspace:1, sort:sortVotesByParam},
     { id:"rating", header:["Rating", {content: "selectFilter"}], fillspace:1, sort:"string"},
-    { template: "<span class='webix_icon wxi-trash delBtn'></span>", css:"deleteBtn"}
+    { template: "<span class='webix_icon wxi-trash deleteBtn'></span>", css:"deleteBtn"}
   ],
   url: DATA_DASHBOARD,
   scrollX: false,
   hover:"tableHover",
-  on:{
-    onAfterLoad: function () {
-      const table = this; 
-
-      this.on_click.delBtn = (e, id) => {
-        this.remove(id);
-      }
+  onClick:{
+    "deleteBtn": function (e, id) {
+      this.remove(id);
     }
-  }
+  },
 };
 
 function sortVotesByParam(a,b){

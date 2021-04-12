@@ -14,8 +14,12 @@ const sideBar = {
       on:{
         onAfterLoad: function() {
           this.select("Dashboard");
-          this.attachEvent("onAfterSelect", (id) => $$(id).show());
-         },
+        },
+        onAfterSelect: function (id) {
+           if($$(id)) {
+             $$(id).show();
+           }
+        },
       }
     },
     {},

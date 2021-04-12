@@ -15,15 +15,10 @@ const list = {
   autoheight:true,
   css:"upperList",
   template:"#name# <span class='webix_icon wxi-close closeBtn upperListBtn'></span>",
-  align:"center",
   select:"multiselect",
-  on:{
-    onAfterLoad: function () {
-      const table = this; 
-
-      table.on_click.closeBtn = (e, id) => {
-        this.remove(id);
-      }
+  onClick:{
+    "closeBtn": function (e, id) {
+      this.remove(id);
     }
   },
   data:DATA_USERS,
@@ -51,16 +46,14 @@ const users = {
 function sortList() {
   const btn = this;
   const sortingDirection = btn.config.name;
-  const btnParent = this.getParentView().getParentView();
-  const list = btnParent.getChildViews()[1];
+  const list = $$("userList");
 
   list.sort("name", sortingDirection);
 }
 
 function filterList() {
   const value = this.getValue().toLowerCase();
-  const listParent = this.getParentView().getParentView();
-  const list = listParent.getChildViews()[1];
+  const list = $$("userList");
 
   list.filter(function(obj){
     return obj.name.toLowerCase().indexOf(value) !== -1;

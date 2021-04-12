@@ -1,4 +1,3 @@
-import { $$ } from "webix/webix";
 import { dataTable } from "./dashboard/dataTable/dataTable";
 import { form } from "./dashboard/form/form";
 import { users } from "./users/users";
