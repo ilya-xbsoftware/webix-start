@@ -10,9 +10,9 @@ const form = {
   elements: [
     { template: "edit films", type: "section" },
     { view: "text", label: "Title", name: "title", invalidMessage: VALID_RULES.title},
-    { view: "text", label: "Year", type:"number", name: "year", invalidMessage: VALID_RULES.year},
-    { view: "text", label: "Votes", type:"number", name: "votes", invalidMessage: VALID_RULES.votes},
-    { view: "text", label: "Rating", type:"number", name: "rating", invalidMessage: VALID_RULES.rating},
+    { view: "text", label: "Year", name: "year", invalidMessage: VALID_RULES.year},
+    { view: "text", label: "Votes", name: "votes", invalidMessage: VALID_RULES.votes},
+    { view: "text", label: "Rating", name: "rating", invalidMessage: VALID_RULES.rating},
     { margin: 10,
       cols: [
         { view: "button", value: "Add new", css: "webix_primary",  click: addNewFilm},
