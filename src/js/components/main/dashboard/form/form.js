@@ -44,8 +44,7 @@ function saveItem(){
     } else {
       table.add(itemData);
     }
-  }
-    
+  }  
 };
 
 function clearForm(){

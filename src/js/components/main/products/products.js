@@ -24,7 +24,7 @@ const products = {
       }
     },
     onValidationError: function() {
-      webix.message("Please, correct data");
+      webix.message({type:"error", text:"Please, correct data"});
     }
   },
   data:DATA_PRODUCTS,
