@@ -15,5 +15,4 @@ const App = webix.ready(() => {
       footer,
     ],
   });
-  
 });
