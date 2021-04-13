@@ -1,17 +1,18 @@
 const tabBar = {
   view:"tabbar", 
+  id:"tabbar",
   autoheight:true,
-    options:[
-      { id:"all", value:"All",},
-      { id:"old", value:"Old" },
-      { id:"modern", value:"Modern" },
-      { id:"three", value:"Three"},
-    ],
-    on: {
-      onAfterTabClick(){
-        $$("filmsTable").filterbyAll();
-      }
+  options:[
+    { id:1, value:"All",},
+    { id:2, value:"Old" },
+    { id:3, value:"Modern" },
+    { id:4, value:"New"},
+  ],
+  on: {
+    onChange:function(){
+      $$("filmsTable").filterByAll();
     }
+  },
 }
 
 export { tabBar };
