@@ -104,6 +104,7 @@ function validate(item, obj) {
   
   if(!name){
     webix.message({type: "error", text:" The name must not be empty"});
+    return false;
   }
 }
 

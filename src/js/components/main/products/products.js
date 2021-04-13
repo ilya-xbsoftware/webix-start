@@ -18,7 +18,7 @@ const products = {
   on: {
     onBeforeEditStop(values, editor){
       const title = editor.getValue();
-      if(!title && !values){
+      if(!title){
         webix.message({type:"error", text:"Title can't be empty"})
         return false;
       }
