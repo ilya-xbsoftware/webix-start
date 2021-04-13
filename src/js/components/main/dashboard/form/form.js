@@ -5,14 +5,14 @@ const webix = require("webix/webix.js");
 
 const form = {
   view: "form",
-  width: 400,
+  width: 280,
   id: "editFilmsForm",
   elements: [
     { template: "edit films", type: "section" },
     { view: "text", label: "Title", name: "title", invalidMessage: VALID_RULES.title},
-    { view: "text", label: "Year", name: "year", invalidMessage: VALID_RULES.year},
-    { view: "text", label: "Votes", name: "votes", invalidMessage: VALID_RULES.votes},
     { view: "text", label: "Rating", name: "rating", invalidMessage: VALID_RULES.rating},
+    { view: "text", label: "Votes", name: "votes", invalidMessage: VALID_RULES.votes},
+    { view: "text", label: "Year", name: "year", invalidMessage: VALID_RULES.year},
     { margin: 10,
       cols: [
         { view: "button", value: "Save", click: saveItem},
@@ -37,13 +37,15 @@ function saveItem(){
   const table = $$("filmsTable");
   const itemData = form.getValues();
   const validateFlag = validateForm(form);
+
   if(validateFlag){
     if (itemData.id){
-      table.updateItem(itemData.id, itemData);
+      form.save();
     } else {
-        table.add(itemData);
+      table.add(itemData);
     }
   }
+    
 };
 
 function clearForm(){
@@ -65,6 +67,8 @@ function validateForm(form) {
   } else{
     webix.message({ type:"error", text:"Form data are invalid"});
   }
+
+  return validationFlag;
 }
 
 export { form };

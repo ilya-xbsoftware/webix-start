@@ -2,11 +2,18 @@ import { dataTable } from "./dashboard/dataTable/dataTable";
 import { form } from "./dashboard/form/form";
 import { users } from "./users/users";
 import { products } from "./products/products";
+import { tabBar } from "./dashboard/tabBar/tabBar";
+
 
 const dashboardSection = {
   id: "Dashboard",
   cols: [
-    dataTable,
+    {
+      rows:[
+        tabBar,
+        dataTable
+      ]
+    },
     form,
   ],
 }
@@ -38,5 +45,6 @@ const main = {
     adminSection,
   ]
 };
+
 
 export { main };
