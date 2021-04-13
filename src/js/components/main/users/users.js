@@ -127,12 +127,7 @@ function createRandomPerson() {
 function createNewPerson(id, name, country, age) {
   const list =  $$("userList");
   const inputValue = $$("inputValue");
-  const person = {};
-
-  person.id = id;
-  person.name = name;
-  person.age = age;
-  person.country = country;
+  const person = {id, name, age, country};
 
   list.add(person);
   inputValue.setValue("");
