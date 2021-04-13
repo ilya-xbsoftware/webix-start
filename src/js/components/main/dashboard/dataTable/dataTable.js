@@ -1,10 +1,10 @@
 import { DATA_DASHBOARD } from "@js/constants/data/dataPath";
-import { CATEGORIES } from "@js/constants/data/categories";
 import addingZeros from "@js/utils/addingZeros";
 import randomNumber from "@js/utils/randomNumber";
-import { ready } from "webix";
+import { categoriesCL } from "@js/collections/collections";
 
 const webix = require("webix/webix.js");
+
 
 const dataTable = {
       view: "datatable",
@@ -19,7 +19,7 @@ const dataTable = {
       columns:[
         { id:"id", header:"#", width:45, adjust: "data", css:{"background":"#f4f5f9"}},
         { id:"title", header:["Film title", {content: "textFilter"}], adjust: "data", sort:"text"},
-        { id:"category", header:["Category", {content: "selectFilter"}], collection:CATEGORIES, fillspace:1, sort:"string"},
+        { id:"category", header:["Category", {content: "selectFilter"}], collection:categoriesCL, fillspace:1, sort:"string"},
         { id:"rating", header:["Rating", {content: "selectFilter"}], fillspace:1, sort:"string"},
         { id:"votes", header:["Votes", {content: "numberFilter"}], fillspace:1, sort:"int"},
         { id:"year", header:"Year", fillspace:1, sort:"int"},
@@ -31,9 +31,11 @@ const dataTable = {
       onClick:{
         "deleteBtn": function (e, id) {
           webix.confirm("Delete selected row?", "confirm-warning")
-          .then(() => {this.remove(id)});
-    
-          return false;
+          .then(() => {
+            this.remove(id);
+            return false;
+          });
+
         }
       },
       on: {

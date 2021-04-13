@@ -1,4 +1,4 @@
-import { DATA_USERS } from "@js/constants/data/users";
+import { usersCL } from "@js/collections/collections";
 import randomNumber from "@js/utils/randomNumber";
 
 const webix = require("webix/webix.js");
@@ -36,7 +36,7 @@ const list = {
     }
   },
   ready: function () {
-    $$("userChart").sync($$("userList"), function () {
+    $$("userChart").sync(usersCL, function () {
       this.group({
         by: "country",
         map: {
@@ -49,8 +49,11 @@ const list = {
   onClick:{
     "closeBtn": function (e, id) {
       webix.confirm("Delete selected row?", "confirm-warning")
-      .then(() => { this.remove(id)});
-      return false;
+      .then(() => { 
+        usersCL.remove(id);
+        return false;
+      });
+      
     }
   },
   on:{
@@ -59,7 +62,7 @@ const list = {
   rules:{
     name: webix.rules.isNotEmpty,
   },
-  data:DATA_USERS,
+  data:usersCL,
 }
 
 const chart = {
@@ -126,11 +129,10 @@ function createRandomPerson() {
 }
 
 function createNewPerson(id, name, country, age) {
-  const list =  $$("userList");
   const inputValue = $$("inputValue");
   const person = {id, name, age, country};
 
-  list.add(person);
+  usersCL.add(person);
   inputValue.setValue("");
   webix.message({type:"success", text:"New usser added"});
 }
