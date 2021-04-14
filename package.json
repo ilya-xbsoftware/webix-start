@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --open",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open --port 8081",
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "lint": "npx eslint --fix ./src"
   },

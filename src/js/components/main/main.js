@@ -3,6 +3,7 @@ import { form } from "./dashboard/form/form";
 import { users } from "./users/users";
 import { products } from "./products/products";
 import { tabBar } from "./dashboard/tabBar/tabBar";
+import { admin } from "./admin/admin";
 
 const dashboardSection = {
   id: "Dashboard",
@@ -33,7 +34,9 @@ const productsSection   = {
 
 const adminSection   = {
   id: "Admin",
-  template: "Admin",
+  rows:[
+    admin,
+  ]
 }
 
 const main = {

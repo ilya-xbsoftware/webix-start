@@ -1,5 +1,6 @@
 import { CONFIRM_TEXT } from "@js/constants/webixConfirm";
 import { VALID_RULES } from "@js/constants/validRules";
+import { categoriesCL } from "@js/collections/collections";
 
 const webix = require("webix/webix.js");
 
@@ -13,6 +14,7 @@ const form = {
     { view: "text", label: "Rating", name: "rating", invalidMessage: VALID_RULES.rating},
     { view: "text", label: "Votes", name: "votes", invalidMessage: VALID_RULES.votes},
     { view: "text", label: "Year", name: "year", invalidMessage: VALID_RULES.year},
+    { view: "richselect" , options:categoriesCL, label: "Сategory", name: "category", invalidMessage: VALID_RULES.title},
     { margin: 10,
       cols: [
         { view: "button", value: "Save", click: saveItem},
