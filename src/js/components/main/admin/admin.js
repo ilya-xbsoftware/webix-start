@@ -41,8 +41,8 @@ const categoryList = {
       webix.confirm("Delete category?", "confirm-warning")
       .then(() => { 
         categoriesCL.remove(id);
-        return false;
       });
+      return false;
     } 
   }  
 }
