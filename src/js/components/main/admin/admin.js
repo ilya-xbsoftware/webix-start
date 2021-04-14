@@ -17,7 +17,6 @@ const categoryList = {
   editable:true,
   select:"row",
   columns:[
-    { id:"counter", header:"#", adjust: "data", css:{"background":"#f4f5f9"}},
     { id:"value", editor:"text", header:"Category", fillspace:1, sort:"string"},
     { template:"<span class='webix_icon wxi-close deleteCategory upperListBtn'></span>",}
   ],
