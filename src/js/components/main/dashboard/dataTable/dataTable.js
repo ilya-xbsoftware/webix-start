@@ -32,7 +32,6 @@ const dataTable = {
           webix.confirm("Delete selected row?", "confirm-warning")
           .then(() => {
             this.remove(id);
-            return false;
           });
 
         }

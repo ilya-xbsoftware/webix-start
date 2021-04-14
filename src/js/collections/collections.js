@@ -7,6 +7,13 @@ const categoriesCL = new webix.DataCollection({
 });
 
 const usersCL = new webix.DataCollection({
+  scheme:{
+    $init: function(data){
+     if(data.age < 26){
+      data.$css = "young";
+     }
+    }
+  },
   data:DATA_USERS
 })
 

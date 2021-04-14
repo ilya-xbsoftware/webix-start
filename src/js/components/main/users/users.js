@@ -28,13 +28,6 @@ const list = {
   editable:true,
   editor:"text",
   editValue:"name",
-  scheme:{
-    $init: function(data){
-     if(data.age < 26){
-      data.$css = "young";
-     }
-    }
-  },
   ready: function () {
     $$("userChart").sync(usersCL, function () {
       this.group({
@@ -51,7 +44,6 @@ const list = {
       webix.confirm("Delete selected row?", "confirm-warning")
       .then(() => { 
         usersCL.remove(id);
-        return false;
       });
       
     }

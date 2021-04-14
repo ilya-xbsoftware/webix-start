@@ -17,7 +17,7 @@ const categoryList = {
   editable:true,
   select:"row",
   columns:[
-    { id:"id", header:"#", adjust: "data", css:{"background":"#f4f5f9"}},
+    { id:"counter", header:"#", adjust: "data", css:{"background":"#f4f5f9"}},
     { id:"value", editor:"text", header:"Category", fillspace:1, sort:"string"},
     { template:"<span class='webix_icon wxi-close deleteCategory upperListBtn'></span>",}
   ],
@@ -56,11 +56,9 @@ const admin = {
 }
 
 function newCategory() {
-  const list = $$("categorieasTable");
   const name = $$("controllerId").getValue();
-  const listLength = Object.keys(list.data.pull).length;
-  const newCategory = {id:listLength+1, value:name}
-
+  const newCategory = {value:name}
+ 
   if(!name){
     webix.message({type:"error", text:"Title can't be empty"})
         return false;

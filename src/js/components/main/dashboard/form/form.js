@@ -14,7 +14,7 @@ const form = {
     { view: "text", label: "Rating", name: "rating", invalidMessage: VALID_RULES.rating},
     { view: "text", label: "Votes", name: "votes", invalidMessage: VALID_RULES.votes},
     { view: "text", label: "Year", name: "year", invalidMessage: VALID_RULES.year},
-    { view: "richselect" , options:categoriesCL, label: "Richselect", name: "category", invalidMessage: VALID_RULES.title},
+    { view: "richselect" , options:categoriesCL, label: "Сategory", name: "category", invalidMessage: VALID_RULES.title},
     { margin: 10,
       cols: [
         { view: "button", value: "Save", click: saveItem},
@@ -23,9 +23,6 @@ const form = {
     },
     {},
   ],
-  // ready: function () {
-  //   $$("richselect").sync(categoriesCL);
-  // },
   rules:{
     title: webix.rules.isNotEmpty,
     year: (value) => value > 1900,
