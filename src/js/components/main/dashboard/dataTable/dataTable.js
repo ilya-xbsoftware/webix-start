@@ -33,7 +33,7 @@ const dataTable = {
           .then(() => {
             this.remove(id);
           });
-
+          return false;
         }
       },
       on: {

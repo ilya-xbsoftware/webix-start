@@ -45,7 +45,7 @@ const list = {
       .then(() => { 
         usersCL.remove(id);
       });
-      
+      return false;
     }
   },
   on:{
