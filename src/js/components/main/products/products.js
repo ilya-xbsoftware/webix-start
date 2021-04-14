@@ -20,11 +20,12 @@ const products = {
       const title = editor.getValue();
       if(!title){
         webix.message({type:"error", text:"Title can't be empty"})
-        return false;
       }
+      return false;
     },
     onValidationError: function() {
       webix.message({type:"error", text:"Please, correct data"});
+      return false
     }
   },
   data:DATA_PRODUCTS,

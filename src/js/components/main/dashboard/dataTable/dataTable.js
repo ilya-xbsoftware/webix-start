@@ -5,7 +5,6 @@ import { categoriesCL } from "@js/collections/collections";
 
 const webix = require("webix/webix.js");
 
-
 const dataTable = {
       view: "datatable",
       id: "filmsTable",
